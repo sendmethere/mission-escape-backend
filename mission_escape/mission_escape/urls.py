@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from rest_framework import routers
+from game.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', admin.site.urls),
 ]

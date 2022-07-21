@@ -33,7 +33,7 @@ class Room(models.Model):
     # Fields
     created = models.DateTimeField(auto_now_add=True, editable=False)
     name = models.CharField(max_length=20)
-
+    
     class Meta:
         pass
 
@@ -56,6 +56,14 @@ class Escmap(models.Model):
     created = models.DateTimeField(auto_now_add=True, editable=False)
     order = models.IntegerField()
     name = models.CharField(max_length=20)
+    mapdata = models.JSONField(default={ 
+        'mapWidth' : 12,
+        'mapHeight' : 12,
+        'tiles' : [],
+        'block' : [],
+        'objects' : [],
+        'events' : [],
+        } )
 
     class Meta:
         pass
